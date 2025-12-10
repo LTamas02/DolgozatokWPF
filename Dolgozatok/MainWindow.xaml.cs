@@ -48,5 +48,31 @@ namespace WpfDolgozat
             return null;
         }
 
+        private void Beolvas()
+        {
+            try
+            {
+                var sorok = File.ReadAllLines(filePath);
+
+                dolgozatok.Clear();
+
+                foreach (var sor in sorok)
+                {
+                    var m = sor.Split(';');
+
+                    dolgozatok.Add(new Dolgozat
+                    {
+                        Nev = m[0],
+                        Eletkor = int.Parse(m[1]),
+                        Pontszam = int.Parse(m[2])
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba beolvasáskor: " + ex.Message);
+            }
+        }
+
     }
 }
