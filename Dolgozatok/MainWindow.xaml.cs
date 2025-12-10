@@ -74,5 +74,26 @@ namespace WpfDolgozat
             }
         }
 
+        private void btnHozzaad_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                dolgozatok.Add(new Dolgozat
+                {
+                    Nev = tbNev.Text,
+                    Eletkor = int.Parse(tbEletkor.Text),
+                    Pontszam = int.Parse(tbPontszam.Text)
+                });
+
+                tbNev.Text = "";
+                tbEletkor.Text = "";
+                tbPontszam.Text = "";
+            }
+            catch
+            {
+                MessageBox.Show("Érvénytelen adat!");
+            }
+        }
+
     }
 }
