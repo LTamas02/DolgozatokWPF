@@ -32,5 +32,14 @@
 
         </StackPanel>
 
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left">
+
+            <Button x:Name="btnHozzaad" Content="Hozzáadás" Width="120"
+                    Margin="10" Click="btnHozzaad_Click"/>
+
+            <Button x:Name="btnMentes" Content="Mentés" Width="120"
+                    Margin="10" Click="btnMentes_Click"/>
+
+        </StackPanel>
     </Grid>
 </Window>
