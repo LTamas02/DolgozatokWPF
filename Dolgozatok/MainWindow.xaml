@@ -10,5 +10,8 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <DataGrid x:Name="dgAdatok" Grid.Row="0" AutoGenerateColumns="True"
+                  Margin="0 0 0 10" />
+
     </Grid>
 </Window>
