@@ -95,5 +95,21 @@ namespace WpfDolgozat
             }
         }
 
+        private void btnMentes_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Mentés ide:\n" + filePath);
+
+            try
+            {
+                File.WriteAllLines(filePath,
+                    dolgozatok.Select(d => $"{d.Nev};{d.Eletkor};{d.Pontszam}"));
+
+                MessageBox.Show("Sikeresen mentve!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba mentéskor: " + ex.Message);
+            }
+        }
     }
 }
